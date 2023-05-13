@@ -43,7 +43,16 @@ body {
   flex-wrap: wrap;
   gap: 24px;
 }
+.difficulty__buttons input[type=radio] {
+  display: none;
+}
+.difficulty__buttons input[type=radio]:checked + label {
+  background: #9bf403;
+}
 .difficulty__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 98px;
   height: 98px;
   background: #ffffff;
@@ -53,17 +62,12 @@ body {
   font-weight: 400;
   font-size: 64px;
   line-height: 72px;
-  justify-content: center;
   color: #0080c1;
 }
-.difficulty__button_start, .difficulty__item:hover {
+.difficulty__item:hover {
   cursor: pointer;
 }
-.difficulty__button_start:active {
-  color: #c2f5ff;
-}
-.difficulty__button_start {
-  justify-content: center;
+.difficulty__button_back {
   width: 246px;
   height: 50px;
   background: #7ac100;
@@ -74,5 +78,31 @@ body {
   font-size: 24px;
   line-height: 32px;
   color: #ffffff;
-  margin-top: 44px;
+  margin-top: 64px;
+}
+
+.start {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.start__button {
+  width: 246px;
+  height: 50px;
+  background: #7ac100;
+  border-radius: 12px;
+  font-family: "StratosSkyeng";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  color: #ffffff;
+  margin-top: 64px;
+}
+.start__button:hover {
+  cursor: pointer;
+}
+.start__button:active {
+  color: #c2f5ff;
 }/*# sourceMappingURL=style.css.map */
