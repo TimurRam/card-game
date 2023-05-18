@@ -1,7 +1,7 @@
-import { appElement, checkButtonsDifficulty } from "../index.js";
+import { appElement, checkButtonsDifficulty } from '../index.js';
 
 export function renderDifficulty() {
-   appElement.innerHTML = `<div class="difficulty">
+    appElement.innerHTML = `<div class="difficulty">
     <h2 class="difficulty__text">Выбери <br> 
         сложность
     </h2>
@@ -20,5 +20,5 @@ export function renderDifficulty() {
             
 </div>
 </div>`;
-checkButtonsDifficulty();
+    checkButtonsDifficulty();
 }
