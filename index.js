@@ -1,5 +1,6 @@
 import { renderDifficulty } from './components/render-difficulty.js';
 import { renderPresentsCard } from './components/render-presents-card.js';
+import './style.css';
 export const appElement = document.querySelector('.container');
 export const globalData = {
     difficulty: '',

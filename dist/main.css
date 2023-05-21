@@ -1,10 +1,13 @@
+/*!*************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./style.css ***!
+  \*************************************************************/
 @font-face {
     font-family: StratosSkyeng;
-    src: url('./fonts/stratosskyengweb-regular.woff') format('woff');
+    src: url(d7d99bd522cf2d77ce4a.woff) format('woff');
 }
 @font-face {
     font-family: StratosSkyeng;
-    src: url('./fonts/stratosskyengweb-regular.woff2') format('woff2');
+    src: url(ce93393e831d32412096.woff2) format('woff2');
 }
 
 * {
@@ -192,7 +195,7 @@ body {
 .game__cards-item {
     width: 95px;
     height: 133px;
-    background-image: url('./img/back/рубашка.jpg');
+    background-image: url(1d7b01653f3b64771ab7.jpg);
     border-radius: 4px;
     border-style: none;
 }
@@ -215,4 +218,5 @@ body {
         box-shadow: 0 0 20px 0 rgb(0 0 0 / 35%);
         transform: scale(1.1);
     }
-} /*# sourceMappingURL=style.css.map */
+}
+
