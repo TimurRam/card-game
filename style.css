@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "StratosSkyeng";
   src: url("./fonts/stratosskyengweb-regular.woff") format("woff");
@@ -6,13 +7,21 @@
   font-family: "StratosSkyeng";
   src: url("./fonts/stratosskyengweb-regular.woff2") format("woff2");
 }
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background: #004980;
 }
 
-.container {
+.center {
   padding-left: calc(50% - 512px);
   padding-right: calc(50% - 512px);
+}
+
+.container {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
@@ -42,6 +51,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 24px;
+  margin-top: 48px;
 }
 .difficulty__buttons input[type=radio] {
   display: none;
@@ -105,4 +115,85 @@ body {
 }
 .start__button:active {
   color: #c2f5ff;
+}
+
+.game {
+  margin: 22px;
+  margin-bottom: 49px;
+}
+.game__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+.game__time-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  width: 155px;
+  height: 91px;
+}
+.game__text-box {
+  display: flex;
+  gap: 57px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  margin-right: 5px;
+}
+.game__time {
+  font-weight: 400;
+  font-size: 64px;
+  color: #ffffff;
+  line-height: 72px;
+}
+.game__again-button {
+  background: #7ac100;
+  color: #ffffff;
+  border-radius: 12px;
+  width: 246px;
+  height: 48px;
+  border-style: none;
+  font-weight: 400;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.game__again-button:hover {
+  cursor: pointer;
+}
+.game__again-button:active {
+  color: #c2f5ff;
+}
+.game__cards {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 15px;
+}
+.game__cards-item {
+  width: 95px;
+  height: 133px;
+  background-image: url(./img/back/рубашка.jpg);
+  border-radius: 4px;
+  border-style: none;
+}
+.game__cards-item:hover {
+  animation: cards__visual 0.3s linear 0s 1 normal forwards;
+}
+
+.-button-active {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes cards__visual {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    transform: scale(1);
+  }
+  100% {
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    transform: scale(1.1);
+  }
 }/*# sourceMappingURL=style.css.map */
