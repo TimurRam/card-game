@@ -1,0 +1,222 @@
+/*!*************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./style.css ***!
+  \*************************************************************/
+@font-face {
+    font-family: StratosSkyeng;
+    src: url(d7d99bd522cf2d77ce4a.woff) format('woff');
+}
+@font-face {
+    font-family: StratosSkyeng;
+    src: url(ce93393e831d32412096.woff2) format('woff2');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #004980;
+}
+
+.center {
+    padding-left: calc(50% - 512px);
+    padding-right: calc(50% - 512px);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.difficulty {
+    margin-top: 158px;
+    width: 480px;
+    height: 459px;
+    background: #c2f5ff;
+    border-radius: 12px;
+}
+
+.difficulty__text {
+    font-family: StratosSkyeng;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    color: #004980;
+}
+
+.difficulty__buttons {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    gap: 24px;
+    margin-top: 48px;
+}
+
+.difficulty__buttons input[type='radio'] {
+    display: none;
+}
+
+.difficulty__buttons input[type='radio']:checked + label {
+    background: #9bf403;
+}
+
+.difficulty__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 98px;
+    height: 98px;
+    background: #fff;
+    border-radius: 12px;
+    font-family: StratosSkyeng;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 72px;
+    color: #0080c1;
+}
+
+.difficulty__item:hover {
+    cursor: pointer;
+}
+
+.difficulty__button_back {
+    width: 246px;
+    height: 50px;
+    background: #7ac100;
+    border-radius: 12px;
+    font-family: StratosSkyeng;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #fff;
+    margin-top: 64px;
+}
+
+.start {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.start__button {
+    width: 246px;
+    height: 50px;
+    background: #7ac100;
+    border-radius: 12px;
+    font-family: StratosSkyeng;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #fff;
+    margin-top: 64px;
+}
+
+.start__button:hover {
+    cursor: pointer;
+}
+
+.start__button:active {
+    color: #c2f5ff;
+}
+
+.game {
+    margin: 22px;
+    margin-bottom: 49px;
+}
+
+.game__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.game__time-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 155px;
+    height: 91px;
+}
+
+.game__text-box {
+    display: flex;
+    gap: 57px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    margin-right: 5px;
+}
+
+.game__time {
+    font-weight: 400;
+    font-size: 64px;
+    color: #fff;
+    line-height: 72px;
+}
+
+.game__again-button {
+    background: #7ac100;
+    color: #fff;
+    border-radius: 12px;
+    width: 246px;
+    height: 48px;
+    border-style: none;
+    font-weight: 400;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game__again-button:hover {
+    cursor: pointer;
+}
+
+.game__again-button:active {
+    color: #c2f5ff;
+}
+
+.game__cards {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 15px;
+}
+
+.game__cards-item {
+    width: 95px;
+    height: 133px;
+    background-image: url(1d7b01653f3b64771ab7.jpg);
+    border-radius: 4px;
+    border-style: none;
+}
+
+.game__cards-item:hover {
+    animation: cards__visual 0.3s linear 0s 1 normal forwards;
+}
+
+.-button-active {
+    box-shadow: inset 0 0 5px rgb(0 0 0 / 50%);
+}
+
+@keyframes cards__visual {
+    0% {
+        box-shadow: 0 0 0 0 rgb(0 0 0 / 0%);
+        transform: scale(1);
+    }
+
+    100% {
+        box-shadow: 0 0 20px 0 rgb(0 0 0 / 35%);
+        transform: scale(1.1);
+    }
+}
+

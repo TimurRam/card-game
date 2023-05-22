@@ -180,6 +180,151 @@ body {
         }
     }
 }
+.preset {
+    &__spadesA {
+        background-image: url(./img/front/spades/A\ spades.png);
+    }
+
+    &__spadesK {
+        background-image: url(./img/front/spades/K\ spades.png);
+    }
+
+    &__spadesQ {
+        background-image: url(./img/front/spades/Q\ spades.png);
+    }
+
+    &__spadesJ {
+        background-image: url(./img/front/spades/J\ spades.png);
+    }
+
+    &__spades10 {
+        background-image: url(./img/front/spades/10\ spades.png);
+    }
+
+    &__spades9 {
+        background-image: url(./img/front/spades/9\ spades.png);
+    }
+
+    &__spades8 {
+        background-image: url(./img/front/spades/8\ spades.png);
+    }
+
+    &__spades7 {
+        background-image: url(./img/front/spades/7\ spades.png);
+    }
+
+    &__spades6 {
+        background-image: url(./img/front/spades/6\ spades.png);
+    }
+
+    &__heartsA {
+        background-image: url(./img/front/hearts/A\ hearts.png);
+    }
+
+    &__heartsK {
+        background-image: url(./img/front/hearts/K\ hearts.png);
+    }
+
+    &__heartsQ {
+        background-image: url(./img/front/hearts/Q\ hearts.png);
+    }
+
+    &__heartsJ {
+        background-image: url(./img/front/hearts/J\ hearts.png);
+    }
+
+    &__hearts10 {
+        background-image: url(./img/front/hearts/10\ hearts.png);
+    }
+
+    &__hearts9 {
+        background-image: url(./img/front/hearts/9\ hearts.png);
+    }
+
+    &__hearts8 {
+        background-image: url(./img/front/hearts/8\ hearts.png);
+    }
+
+    &__hearts7 {
+        background-image: url(./img/front/hearts/7\ hearts.png);
+    }
+
+    &__hearts6 {
+        background-image: url(./img/front/hearts/6\ hearts.png);
+    }
+
+    &__diamondsA {
+        background-image: url(./img/front/diamonds/A\ diamonds.png);
+    }
+
+    &__diamondsK {
+        background-image: url(./img/front/diamonds/K\ diamonds.png);
+    }
+
+    &__diamondsQ {
+        background-image: url(./img/front/diamonds/Q\ diamonds.png);
+    }
+
+    &__diamondsJ {
+        background-image: url(./img/front/diamonds/J\ diamonds.png);
+    }
+
+    &__diamonds10 {
+        background-image: url(./img/front/diamonds/10\ diamonds.png);
+    }
+
+    &__diamonds9 {
+        background-image: url(./img/front/diamonds/9\ diamonds.png);
+    }
+
+    &__diamonds8 {
+        background-image: url(./img/front/diamonds/8\ diamonds.png);
+    }
+
+    &__diamonds7 {
+        background-image: url(./img/front/diamonds/7\ diamonds.png);
+    }
+
+    &__diamonds6 {
+        background-image: url(./img/front/diamonds/6\ diamonds.png);
+    }
+
+    &__clubsA {
+        background-image: url(./img/front/clubs/A\ clubs.png);
+    }
+
+    &__clubsK {
+        background-image: url(./img/front/clubs/K\ clubs.png);
+    }
+
+    &__clubsQ {
+        background-image: url(./img/front/clubs/Q\ clubs.png);
+    }
+
+    &__clubsJ {
+        background-image: url(./img/front/clubs/J\ clubs.png);
+    }
+
+    &__clubs10 {
+        background-image: url(./img/front/clubs/10\ clubs.png);
+    }
+
+    &__clubs9 {
+        background-image: url(./img/front/clubs/9\ clubs.png);
+    }
+
+    &__clubs8 {
+        background-image: url(./img/front/clubs/8\ clubs.png);
+    }
+
+    &__clubs7 {
+        background-image: url(./img/front/clubs/7\ clubs.png);
+    }
+
+    &__clubs6 {
+        background-image: url(./img/front/clubs/6\ clubs.png);
+    }
+}
 
 .-button-active {
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
