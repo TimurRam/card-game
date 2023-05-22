@@ -1,5 +1,10 @@
 import { renderDifficulty } from './render-difficulty.js';
-import { appElement, globalData } from '../index.js';
+import {
+    appElement,
+    globalData,
+    randomButtonElements,
+    randomSuitAndRank,
+} from '../index.js';
 const gameTitleElement = ` <div class="game__title">
 <div class="game__time-box">
     <div class="game__text-box">
@@ -10,101 +15,41 @@ const gameTitleElement = ` <div class="game__title">
 </div>
 <div class="game__again-button">Начать заново</div>
 </div>`;
-const presentClosedCards = `<div class="game">
-  ${gameTitleElement}
-<div class="game__cards">
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-    <div class="game__cards-item"></div>
-</div>
-</div>
-`;
-const presentOpenCards = `<div class="game">
-      ${gameTitleElement}
-<div class="game__cards">
-<div class="game__cards-item"><img src="./img/front/туз пики.png" alt="туз пики"></div>
-<div class="game__cards-item"><img src="./img/front/король пики.png" alt="король пики"></div>
-<div class="game__cards-item"><img src="./img/front/дама пики.png" alt="дама пики"></div>
-<div class="game__cards-item"><img src="./img/front/валет пики.png" alt="валет пики"></div>
-<div class="game__cards-item"><img src="./img/front/10 пики.png" alt="10 пики"></div>
-<div class="game__cards-item"><img src="./img/front/9 пики.png" alt="9 пики"></div>
-<div class="game__cards-item"><img src="./img/front/8 пики.png" alt="8 пики"></div>
-<div class="game__cards-item"><img src="./img/front/7 пики.png" alt="7 пики"></div>
-<div class="game__cards-item"><img src="./img/front/6 пики.png" alt="6 пики"></div>
-<div class="game__cards-item"><img src="./img/front/туз черви.png" alt="туз черви"></div>
-<div class="game__cards-item"><img src="./img/front/король черви.png" alt="король черви"></div>
-<div class="game__cards-item"><img src="./img/front/дама черви.png" alt="дама черви"></div>
-<div class="game__cards-item"><img src="./img/front/валет черви.png" alt="валет черви"></div>
-<div class="game__cards-item"><img src="./img/front/10 черви.png" alt="10 черви"></div>
-<div class="game__cards-item"><img src="./img/front/9 черви.png" alt="9 черви"></div>
-<div class="game__cards-item"><img src="./img/front/8 черви.png" alt="8 черви"></div>
-<div class="game__cards-item"><img src="./img/front/7 черви.png" alt="7 черви"></div>
-<div class="game__cards-item"><img src="./img/front/6 черви.png" alt="6 черви"></div>
-<div class="game__cards-item"><img src="./img/front/туз бубны.png" alt="туз бубны"></div>
-<div class="game__cards-item"><img src="./img/front/король бубны.png" alt="король бубны"></div>
-<div class="game__cards-item"><img src="./img/front/дама бубны.png" alt="дама бубны"></div>
-<div class="game__cards-item"><img src="./img/front/валет бубны.png" alt="валет бубны"></div>
-<div class="game__cards-item"><img src="./img/front/10 бубны.png" alt="10 бубны"></div>
-<div class="game__cards-item"><img src="./img/front/9 бубны.png" alt="9 бубны"></div>
-<div class="game__cards-item"><img src="./img/front/8 бубны.png" alt="8 бубны"></div>
-<div class="game__cards-item"><img src="img/front/7 бубны.png" alt="7 бубны"></div>
-<div class="game__cards-item"><img src="./img/front/6 бубны.png" alt="6 бубны"></div>
-<div class="game__cards-item"><img src="./img/front/туз крести.png" alt="туз крести"></div>
-<div class="game__cards-item"><img src="./img/front/король крести.png" alt="король крести"></div>
-<div class="game__cards-item"><img src="./img/front/дама крести.png" alt="дама крести"></div>
-<div class="game__cards-item"><img src="./img/front/валет крести.png" alt="валет крести"></div>
-<div class="game__cards-item"><img src="./img/front/10 крести.png" alt="10 крести"></div>
-<div class="game__cards-item"><img src="./img/front/9 крести.png" alt="9 крести"></div>
-<div class="game__cards-item"><img src="./img/front/8 крести.png" alt="8 крести"></div>
-<div class="game__cards-item"><img src="./img/front/7 крести.png" alt="7 крести"></div>
-<div class="game__cards-item"><img src="./img/front/6 крести.png" alt="6 крести"></div>
-</div>
-</div>`;
 
 export function renderPresentsCard() {
     switch (globalData.difficulty) {
         case 'easy':
-            appElement.innerHTML = presentClosedCards;
+            randomSuitAndRank(3);
+            appElement.innerHTML = `
+            <div class="game">
+                ${gameTitleElement}
+                <div class="game__cards">
+                    ${randomButtonElements(6)}
+                </div>
+            </div>
+            `;
             break;
         case 'medium':
-            appElement.innerHTML = presentOpenCards;
+            randomSuitAndRank(6);
+            appElement.innerHTML = `
+            <div class="game">
+                ${gameTitleElement}
+                <div class="game__cards">
+                    ${randomButtonElements(12)}
+                </div>
+            </div>
+            `;
             break;
         case 'hard':
-            appElement.innerHTML = presentOpenCards;
-
+            randomSuitAndRank(9);
+            appElement.innerHTML = `
+            <div class="game">
+                ${gameTitleElement}
+                <div class="game__cards">
+                    ${randomButtonElements(18)}
+                </div>
+            </div>
+            `;
             break;
         default:
             break;
@@ -112,6 +57,40 @@ export function renderPresentsCard() {
     document
         .querySelector('.game__again-button')
         .addEventListener('click', () => {
+            delete globalData.selectedCard;
             renderDifficulty();
         });
+    checkButtonPresets();
+}
+
+function checkButtonPresets() {
+    const itemElements = document.querySelectorAll('.game__cards-item');
+    setTimeout(() => {
+        for (const itemElement of itemElements) {
+            itemElement.classList.remove(
+                `preset__${itemElement.dataset.preset}`
+            );
+        }
+
+        for (const itemElement of itemElements) {
+            itemElement.addEventListener('click', () => {
+                itemElement.classList.add('-button-active');
+                itemElement.classList.add(
+                    `preset__${itemElement.dataset.preset}`
+                );
+                if (!globalData.selectedCard) {
+                    globalData.selectedCard = itemElement.dataset.preset;
+                    itemElement.dataset.preset = '';
+                    return;
+                }
+                if (globalData.selectedCard === itemElement.dataset.preset) {
+                    alert('Вы победили!');
+                    delete globalData.selectedCard;
+                } else {
+                    alert('Вы проиграли!');
+                    delete globalData.selectedCard;
+                }
+            });
+        }
+    }, 5 * 1000);
 }
