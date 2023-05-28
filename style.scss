@@ -95,14 +95,12 @@ body {
         margin: 0;
     }
     &__win {
-        
         height: 96px;
         width: 96px;
         background-image: url(./img/win.svg);
     }
 
     &__lose {
-       
         height: 96px;
         width: 96px;
         background-image: url(./img/loser.svg);
@@ -231,8 +229,6 @@ body {
         &:hover {
             animation: cards__visual 0.3s linear 0s 1 normal forwards;
         }
-        
-        
     }
 }
 .preset {
@@ -398,15 +394,15 @@ body {
 }
 @keyframes flip-vertical-right {
     0% {
-      -webkit-transform: rotateY(0);
-              transform: rotateY(0);
+        -webkit-transform: rotateY(0);
+        transform: rotateY(0);
     }
     100% {
-      -webkit-transform: rotateY(180deg);
-              transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg);
     }
-  }
+}
 .flip-vertical-right {
-	-webkit-animation: flip-vertical-right 0.5null normal ;
-	        animation: flip-vertical-right 0.5null normal ;
+    -webkit-animation: flip-vertical-right 0.5null normal;
+    animation: flip-vertical-right 0.5null normal;
 }

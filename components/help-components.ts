@@ -36,7 +36,7 @@ export function randomItemElements(numb: number) {
     return randomItemElement.join('');
 }
 export function startTime() {
-    const timerElement = document.getElementById("timer");
+    const timerElement = document.getElementById('timer');
     let sec = 0;
     let min = 0;
     let t: any;
@@ -54,13 +54,13 @@ export function startTime() {
     }
 
     function add() {
-        if(globalData.timerCheck === 'on'){
+        if (globalData.timerCheck === 'on') {
             clearTimeout(t);
             return;
         }
         tick();
         timerElement!.innerHTML =
-            (min > 9 ? min : "0" + min) + ":" + (sec > 9 ? sec : "0" + sec);
+            (min > 9 ? min : '0' + min) + ':' + (sec > 9 ? sec : '0' + sec);
         globalData.timer = timerElement!.innerHTML;
         console.log(globalData.timer);
         timer();
