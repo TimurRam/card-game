@@ -1,17 +1,17 @@
 import { renderDifficulty } from './components/render-difficulty';
 import './style.css';
-interface Card  {
+interface ICard {
     appElement: HTMLElement | null;
     suit: Array<string>;
     rank: Array<string>;
     randomPreset: Array<string>;
     difficulty: string;
     selectedCard: string | undefined;
-    index: Number;
-    timer: String;
+    index: number;
+    timer: string;
     timerCheck: string;
-};
-export const globalData: Card = {
+}
+export const globalData: ICard = {
     appElement: document.querySelector('.container'),
     suit: ['spades', 'hearts', 'diamonds', 'clubs'],
     rank: ['A', 'K', 'Q', 'J', '10', '9', '8', '7', '6'],

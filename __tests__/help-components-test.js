@@ -1,8 +1,8 @@
-const { it, expect, describe } = require('@jest/globals');
-const {
+import { it, expect, describe }  from '@jest/globals';
+import {
     randomSuitAndRank,
     randomItemElements,
-} = require('../components/help-components');
+} from '../components/help-components';
 
 describe('Функции внутри модуля help-components', () => {
     it('Создает массив с рандомным наполнением на основе двух других и дублирует его', () => {
@@ -12,7 +12,7 @@ describe('Функции внутри модуля help-components', () => {
         randomArr = randomSuitAndRank(number);
 
         expect(randomArr).toHaveLength(number + number);
-    });
+    }); 
 
     it('Создает массив с HTML разметкой кнопок', () => {
         const number = 6;
