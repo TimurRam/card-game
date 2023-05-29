@@ -29,7 +29,12 @@ body {
     height: 459px;
     background: #c2f5ff;
     border-radius: 12px;
-    &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__title {
         font-family: 'StratosSkyeng';
         font-style: normal;
         font-weight: 400;
@@ -72,7 +77,8 @@ body {
     &__item:hover {
         cursor: pointer;
     }
-    &__button_back {
+    &__button_back,
+    &__buttonStart {
         width: 246px;
         height: 50px;
         background: #7ac100;
@@ -84,6 +90,53 @@ body {
         line-height: 32px;
         color: #ffffff;
         margin-top: 64px;
+    }
+    &__buttonStart {
+        margin: 0;
+    }
+    &__win {
+        
+        height: 96px;
+        width: 96px;
+        background-image: url(./img/win.svg);
+    }
+
+    &__lose {
+       
+        height: 96px;
+        width: 96px;
+        background-image: url(./img/loser.svg);
+    }
+
+    &__title-win {
+        color: #004980;
+        font-size: 40px;
+        line-height: 48px;
+        font-family: 'StratosSkyeng';
+        font-style: normal;
+        font-weight: 400;
+        color: #004980;
+        margin-top: 4px;
+        margin-bottom: 28px;
+    }
+
+    &__timer {
+        font-family: 'StratosSkyeng';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 64px;
+        line-height: 72px;
+        margin-top: 10px;
+        margin-bottom: 40px;
+        color: #000000;
+    }
+    &__text {
+        font-family: 'StratosSkyeng';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 32px;
+        color: #000000;
     }
 }
 .start {
@@ -165,7 +218,7 @@ body {
     }
     &__cards {
         display: grid;
-        grid-template-columns: repeat(9, 1fr);
+        grid-template-columns: repeat(6, 1fr);
         gap: 15px;
     }
 
@@ -178,6 +231,8 @@ body {
         &:hover {
             animation: cards__visual 0.3s linear 0s 1 normal forwards;
         }
+        
+        
     }
 }
 .preset {
@@ -340,4 +395,18 @@ body {
         box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
         transform: scale(1.1);
     }
+}
+@keyframes flip-vertical-right {
+    0% {
+      -webkit-transform: rotateY(0);
+              transform: rotateY(0);
+    }
+    100% {
+      -webkit-transform: rotateY(180deg);
+              transform: rotateY(180deg);
+    }
+  }
+.flip-vertical-right {
+	-webkit-animation: flip-vertical-right 0.5null normal ;
+	        animation: flip-vertical-right 0.5null normal ;
 }

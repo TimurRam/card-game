@@ -1,15 +1,5 @@
-import { renderDifficulty } from './components/render-difficulty.js';
-import { renderPresentsCard } from './components/render-presents-card.js';
-import './style.css';
-export const appElement = document.querySelector('.container');
-export const globalData = {
-    suit: ['spades', 'hearts', 'diamonds', 'clubs'],
-    rank: ['A', 'K', 'Q', 'J', '10', '9', '8', '7', '6'],
-};
-
-renderDifficulty();
-
-export function randomSuitAndRank(numb) {
+import { globalData } from '../index';
+export function randomSuitAndRank(numb: number) {
     let randomPreset = new Array(numb);
     for (let i = 0; i < numb; i++) {
         if (globalData.suit.length === 0) {
@@ -19,43 +9,68 @@ export function randomSuitAndRank(numb) {
             globalData.rank = ['A', 'K', 'Q', 'J', '10', '9', '8', '7', '6'];
         }
         const randomSuit = Math.floor(Math.random() * globalData.suit.length);
+
         const randomRank = Math.floor(Math.random() * globalData.rank.length);
+
         randomPreset[i] =
             globalData.suit[randomSuit] + globalData.rank[randomRank];
+
         globalData.suit.splice(randomSuit, 1);
         globalData.rank.splice(randomRank, 1);
     }
     globalData.randomPreset = [...randomPreset, ...randomPreset];
     return;
 }
-
-export function randomButtonElements(numb) {
-    let randomButtonElement = new Array();
+export function randomItemElements(numb: number) {
+    globalData.index = numb;
+    let randomItemElement = new Array();
     for (let i = 0; i < numb; i++) {
         const randomI = Math.floor(
             Math.random() * globalData.randomPreset.length
         );
-        randomButtonElement[i] = `
+        randomItemElement[i] = `
         <div data-preset="${globalData.randomPreset[randomI]}" class="game__cards-item preset__${globalData.randomPreset[randomI]}"></div>
         `;
         globalData.randomPreset.splice(randomI, 1);
     }
-    return randomButtonElement.join('');
+    return randomItemElement.join('');
 }
+export function startTime() {
+    const timerElement = document.getElementById("timer");
+    let sec = 0;
+    let min = 0;
+    let t: any;
 
-export function checkButtonsDifficulty() {
-    const difficultyButtons = document.getElementsByName('difficult');
-    const buttonStart = document.querySelector('.start__button');
-    difficultyButtons.forEach((el) => {
-        el.addEventListener('click', () => {
-            globalData.difficulty = el.value;
-        });
-    });
-    buttonStart.addEventListener('click', () => {
-        if (!globalData.difficulty) {
-            alert('С начало выберете сложность');
+    function tick() {
+        sec++;
+        if (sec >= 60) {
+            sec = 0;
+            min++;
+            if (min >= 60) {
+                min = 0;
+            }
+        }
+        return;
+    }
+
+    function add() {
+        if(globalData.timerCheck === 'on'){
+            clearTimeout(t);
             return;
         }
-        renderPresentsCard();
-    });
+        tick();
+        timerElement!.innerHTML =
+            (min > 9 ? min : "0" + min) + ":" + (sec > 9 ? sec : "0" + sec);
+        globalData.timer = timerElement!.innerHTML;
+        console.log(globalData.timer);
+        timer();
+        return;
+    }
+
+    function timer() {
+        t = setTimeout(add, 1000);
+        return;
+    }
+
+    timer();
 }
