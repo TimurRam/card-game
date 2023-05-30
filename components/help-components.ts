@@ -18,8 +18,7 @@ export function randomSuitAndRank(numb: number) {
         globalData.suit.splice(randomSuit, 1);
         globalData.rank.splice(randomRank, 1);
     }
-    globalData.randomPreset = [...randomPreset, ...randomPreset];
-    return;
+    return [...randomPreset, ...randomPreset];
 }
 export function randomItemElements(numb: number) {
     globalData.index = numb;

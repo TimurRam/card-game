@@ -20,7 +20,7 @@ const gameTitleElement = ` <div class="game__title">
 export function renderPresentsCard() {
     switch (globalData.difficulty) {
         case 'easy':
-            randomSuitAndRank(3);
+            globalData.randomPreset = randomSuitAndRank(3);
             globalData.appElement!.innerHTML = `
             <div class="game">
                 ${gameTitleElement}
@@ -31,7 +31,7 @@ export function renderPresentsCard() {
             `;
             break;
         case 'medium':
-            randomSuitAndRank(6);
+            globalData.randomPreset = randomSuitAndRank(6);
             globalData.appElement!.innerHTML = `
             <div class="game">
                 ${gameTitleElement}
@@ -42,7 +42,7 @@ export function renderPresentsCard() {
             `;
             break;
         case 'hard':
-            randomSuitAndRank(9);
+            globalData.randomPreset = randomSuitAndRank(9);
             globalData.appElement!.innerHTML = `
             <div class="game">
                 ${gameTitleElement}
@@ -66,7 +66,7 @@ export function renderPresentsCard() {
 function checkButtonPresets() {
     const buttonElements = document.querySelectorAll('.game__cards-item');
     let cardIndex = 0;
-    let timerCheck = false;
+    const timerCheck = false;
     setTimeout(() => {
         for (const buttonElement of buttonElements as any) {
             if (buttonElement instanceof HTMLElement) {

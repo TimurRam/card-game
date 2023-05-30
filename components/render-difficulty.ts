@@ -33,7 +33,7 @@ export function checkButtonsDifficulty() {
             globalData.difficulty = difficultyButton.value;
         });
     }
-    if(buttonStart){
+    if (buttonStart) {
         buttonStart.addEventListener('click', () => {
             if (!globalData.difficulty) {
                 alert('С начало выберете сложность');
@@ -42,5 +42,4 @@ export function checkButtonsDifficulty() {
             renderPresentsCard();
         });
     }
-  
 }

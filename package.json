@@ -9,7 +9,7 @@
         "build": "webpack",
         "start": "webpack-dev-server --mode development --open",
         "format": "prettier --write .",
-        "lint": "npm run format && npm run lint:scss",
+        "lint": "npm run format && npm run lint:scss && npm run lint:ts",
         "lint:scss": "stylelint ./*.scss",
         "lint:ts": "npx eslint ./**/*.ts"
     },
