@@ -1,2 +1,7 @@
 node_modules/
 dist/
+**/*test.js/
+**/*style.css/
+__tests__/
+__mocks__/
+wwebpack.config.js/

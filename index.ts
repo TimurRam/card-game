@@ -1,33 +1,25 @@
 import { renderDifficulty } from './components/render-difficulty';
 import './style.css';
-type Card = {
+interface ICard {
     appElement: HTMLElement | null;
     suit: Array<string>;
     rank: Array<string>;
     randomPreset: Array<string>;
-    difficulty: string
+    difficulty: string;
     selectedCard: string | undefined;
-    index: Number;
-    timer: String;
+    index: number;
+    timer: string;
     timerCheck: string;
-};
-export const globalData: Card = {
+}
+export const globalData: ICard = {
     appElement: document.querySelector('.container'),
-    suit: ["spades", "hearts", "diamonds", "clubs"],
-    rank: ["A", "K", "Q", "J", "10", "9", "8", "7", "6"],
+    suit: ['spades', 'hearts', 'diamonds', 'clubs'],
+    rank: ['A', 'K', 'Q', 'J', '10', '9', '8', '7', '6'],
     randomPreset: new Array<string>(),
-    difficulty:"",
-    selectedCard: "clear",
+    difficulty: '',
+    selectedCard: 'clear',
     index: 0,
-    timer: "",
+    timer: '',
     timerCheck: 'on',
 };
 renderDifficulty();
-
-
-
-
-
-
-
-

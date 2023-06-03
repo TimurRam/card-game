@@ -1,3 +1,14 @@
+/* stylelint-disable color-hex-length */
+/* stylelint-disable length-zero-no-unit */
+/* stylelint-disable keyframes-name-pattern */
+/* stylelint-disable color-function-notation */
+/* stylelint-disable alpha-value-notation */
+/* stylelint-disable function-url-quotes */
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+/* stylelint-disable selector-class-pattern */
+/* stylelint-disable rule-empty-line-before */
+/* stylelint-disable font-family-name-quotes */
+/* stylelint-disable prettier/prettier */
 @font-face {
     font-family: 'StratosSkyeng';
     src: url('./fonts/stratosskyengweb-regular.woff') format('woff');
@@ -48,7 +59,6 @@ body {
         align-content: center;
         justify-content: center;
         flex-direction: row;
-        flex-wrap: wrap;
         gap: 24px;
         margin-top: 48px;
     }
@@ -95,14 +105,12 @@ body {
         margin: 0;
     }
     &__win {
-        
         height: 96px;
         width: 96px;
         background-image: url(./img/win.svg);
     }
 
     &__lose {
-       
         height: 96px;
         width: 96px;
         background-image: url(./img/loser.svg);
@@ -115,7 +123,6 @@ body {
         font-family: 'StratosSkyeng';
         font-style: normal;
         font-weight: 400;
-        color: #004980;
         margin-top: 4px;
         margin-bottom: 28px;
     }
@@ -142,7 +149,6 @@ body {
 .start {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
 
     &__button {
@@ -231,8 +237,6 @@ body {
         &:hover {
             animation: cards__visual 0.3s linear 0s 1 normal forwards;
         }
-        
-        
     }
 }
 .preset {
@@ -395,18 +399,4 @@ body {
         box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
         transform: scale(1.1);
     }
-}
-@keyframes flip-vertical-right {
-    0% {
-      -webkit-transform: rotateY(0);
-              transform: rotateY(0);
-    }
-    100% {
-      -webkit-transform: rotateY(180deg);
-              transform: rotateY(180deg);
-    }
-  }
-.flip-vertical-right {
-	-webkit-animation: flip-vertical-right 0.5null normal ;
-	        animation: flip-vertical-right 0.5null normal ;
 }

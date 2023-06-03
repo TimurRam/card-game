@@ -1,6 +1,6 @@
 import { globalData } from '../index';
 export function randomSuitAndRank(numb: number) {
-    let randomPreset = new Array(numb);
+    const randomPreset = new Array(numb);
     for (let i = 0; i < numb; i++) {
         if (globalData.suit.length === 0) {
             globalData.suit = ['spades', 'hearts', 'diamonds', 'clubs'];
@@ -18,12 +18,11 @@ export function randomSuitAndRank(numb: number) {
         globalData.suit.splice(randomSuit, 1);
         globalData.rank.splice(randomRank, 1);
     }
-    globalData.randomPreset = [...randomPreset, ...randomPreset];
-    return;
+    return [...randomPreset, ...randomPreset];
 }
 export function randomItemElements(numb: number) {
     globalData.index = numb;
-    let randomItemElement = new Array();
+    const randomItemElement = new Array(numb);
     for (let i = 0; i < numb; i++) {
         const randomI = Math.floor(
             Math.random() * globalData.randomPreset.length
@@ -36,7 +35,7 @@ export function randomItemElements(numb: number) {
     return randomItemElement.join('');
 }
 export function startTime() {
-    const timerElement = document.getElementById("timer");
+    const timerElement = document.getElementById('timer');
     let sec = 0;
     let min = 0;
     let t: any;
@@ -54,17 +53,19 @@ export function startTime() {
     }
 
     function add() {
-        if(globalData.timerCheck === 'on'){
+        if (globalData.timerCheck === 'on') {
             clearTimeout(t);
             return;
         }
         tick();
-        timerElement!.innerHTML =
-            (min > 9 ? min : "0" + min) + ":" + (sec > 9 ? sec : "0" + sec);
-        globalData.timer = timerElement!.innerHTML;
-        console.log(globalData.timer);
-        timer();
-        return;
+        if (timerElement) {
+            timerElement.innerHTML =
+                (min > 9 ? min : '0' + min) + ':' + (sec > 9 ? sec : '0' + sec);
+            globalData.timer = timerElement.innerHTML;
+            console.log(globalData.timer);
+            timer();
+            return;
+        }
     }
 
     function timer() {

@@ -2,7 +2,8 @@ import { renderPresentsCard } from './render-presents-card';
 import { globalData } from '../index';
 
 export function renderDifficulty() {
-    globalData.appElement!.innerHTML = `<div class="difficulty">
+    if (globalData.appElement) {
+        globalData.appElement.innerHTML = `<div class="difficulty">
     <h2 class="difficulty__title">Выбери <br> 
         сложность
     </h2>
@@ -21,6 +22,7 @@ export function renderDifficulty() {
             
 </div>
 </div>`;
+    }
     checkButtonsDifficulty();
 }
 export function checkButtonsDifficulty() {
@@ -31,11 +33,13 @@ export function checkButtonsDifficulty() {
             globalData.difficulty = difficultyButton.value;
         });
     }
-    buttonStart!.addEventListener('click', () => {
-        if (!globalData.difficulty) {
-            alert('С начало выберете сложность');
-            return;
-        }
-        renderPresentsCard();
-    });
+    if (buttonStart) {
+        buttonStart.addEventListener('click', () => {
+            if (!globalData.difficulty) {
+                alert('С начало выберете сложность');
+                return;
+            }
+            renderPresentsCard();
+        });
+    }
 }
