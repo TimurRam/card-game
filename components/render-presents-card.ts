@@ -66,8 +66,9 @@ export function renderPresentsCard() {
 function checkButtonPresets() {
     const buttonElements = document.querySelectorAll('.game__cards-item');
     let cardIndex = 0;
-    const timerCheck = false;
     setTimeout(() => {
+        globalData.timerCheck === 'off';
+        startTime();
         for (const buttonElement of buttonElements as any) {
             if (buttonElement instanceof HTMLElement) {
                 buttonElement.classList.remove(
@@ -87,7 +88,6 @@ function checkButtonPresets() {
                         case 'clear':
                             if (globalData.timerCheck === 'on') {
                                 globalData.timerCheck = 'off';
-                                startTime();
                             }
                             globalData.selectedCard =
                                 buttonElement.dataset.preset;

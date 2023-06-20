@@ -38,8 +38,7 @@ export function startTime() {
     const timerElement = document.getElementById('timer');
     let sec = 0;
     let min = 0;
-    let t: any;
-
+    let t: number;
     function tick() {
         sec++;
         if (sec >= 60) {
@@ -62,14 +61,13 @@ export function startTime() {
             timerElement.innerHTML =
                 (min > 9 ? min : '0' + min) + ':' + (sec > 9 ? sec : '0' + sec);
             globalData.timer = timerElement.innerHTML;
-            console.log(globalData.timer);
             timer();
             return;
         }
     }
 
     function timer() {
-        t = setTimeout(add, 1000);
+        t = window.setTimeout(add, 1000);
         return;
     }
 

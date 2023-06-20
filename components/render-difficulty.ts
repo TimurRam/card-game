@@ -1,5 +1,6 @@
 import { renderPresentsCard } from './render-presents-card';
 import { globalData } from '../index';
+import { ChunkGraph } from 'webpack';
 
 export function renderDifficulty() {
     if (globalData.appElement) {
@@ -29,6 +30,7 @@ export function checkButtonsDifficulty() {
     const difficultyButtons = document.querySelectorAll('input[type="radio"]');
     const buttonStart = document.querySelector('.start__button');
     for (const difficultyButton of difficultyButtons as any) {
+        console.log(typeof 'difficultyButton');
         difficultyButton.addEventListener('click', () => {
             globalData.difficulty = difficultyButton.value;
         });
